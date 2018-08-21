@@ -24,6 +24,14 @@
             document.querySelector("div.regist_view_pop").remove();
             document.querySelector("div.bg_player_login").remove();
             observer.disconnect();
+
+            var duration = getDuration();
+            $("#practice_timer").text(timer_text(duration));
+            timer = setInterval(function() {
+                duration++;
+                $("#practice_timer").text(timer_text(duration));
+                window.curTimer = duration;
+            },1000);
         }
     };
 
